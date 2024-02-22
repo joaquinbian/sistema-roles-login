@@ -20,12 +20,14 @@ public class Controladora {
     
     public void crearUsuario(String name, String passwordToHash){
         Usuario usuario = new Usuario();
-        String salt = passwordManager.getHash();
+        String salt = passwordManager.getSalt();
         String password = passwordManager.generatePassword(passwordToHash, salt); 
         
         usuario.setName(name);
         usuario.setPassword(password);
         usuario.setSalt(salt);
+        
+        
         controlPersist.crearUsuario(usuario);
     }
     
