@@ -29,10 +29,14 @@ public class Password {
             md.update(salt.getBytes());
             byte[] bytes = md.digest(passwordToHash.getBytes());
             StringBuilder sb = new StringBuilder();
+            
+            //convertimos el array de bytes en decimales a hexadecimal
             for (int i = 0; i < bytes.length; i++) {
                 sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16)
                         .substring(1));
             }
+            
+            //obtenemos la pass en string
             generatedPassword = sb.toString();
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
