@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 @Entity
 public class Usuario implements Serializable {
@@ -17,16 +18,19 @@ public class Usuario implements Serializable {
     @Basic
     private String name;
     private String password;
-    
+    private String salt;
+        
     
     public Usuario(){
         
     }
 
-    public Usuario(int id, String name, String password) {
+    public Usuario(int id, String name, String password, String salt) {
         this.id = id;
         this.name = name;
         this.password = password;
+        this.salt = salt;
+        
     }
 
     public int getId() {
@@ -52,6 +56,16 @@ public class Usuario implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+    
+    
     
     
 }

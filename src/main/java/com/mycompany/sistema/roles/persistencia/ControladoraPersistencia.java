@@ -12,4 +12,8 @@ public class ControladoraPersistencia {
     public List<Usuario> getUsuarios(){
         return controlUsuario.findUsuarioEntities();
     }
+    
+    public void crearUsuario(Usuario usuario){
+        controlUsuario.create(usuario);
+    }
 }
