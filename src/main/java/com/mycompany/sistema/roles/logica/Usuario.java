@@ -3,10 +3,11 @@ package com.mycompany.sistema.roles.logica;
 import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Transient;
 
 @Entity
 public class Usuario implements Serializable {
@@ -19,19 +20,24 @@ public class Usuario implements Serializable {
     private String name;
     private String password;
     private String salt;
+    
+    @Enumerated(EnumType.ORDINAL)
+    private Role role;
         
     
     public Usuario(){
         
     }
 
-    public Usuario(int id, String name, String password, String salt) {
+    public Usuario(int id, String name, String password, String salt, Role role) {
         this.id = id;
         this.name = name;
         this.password = password;
         this.salt = salt;
-        
+        this.role = role;
     }
+
+ 
 
     public int getId() {
         return id;
@@ -63,6 +69,14 @@ public class Usuario implements Serializable {
 
     public void setSalt(String salt) {
         this.salt = salt;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
     
     

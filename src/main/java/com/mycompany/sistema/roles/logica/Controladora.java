@@ -24,6 +24,8 @@ public class Controladora {
         usuario.setName(name);
         usuario.setPassword(password);
         usuario.setSalt(salt);
+        usuario.setRole(Role.USER);
+        
         
         
         controlPersist.crearUsuario(usuario);
