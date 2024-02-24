@@ -51,10 +51,10 @@
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jButton3" max="32767" attributes="0"/>
-                      <Component id="jButton5" max="32767" attributes="0"/>
-                      <Component id="jButton6" pref="130" max="32767" attributes="0"/>
-                      <Component id="jButton2" max="32767" attributes="0"/>
+                      <Component id="cargarUsuarioBtn" max="32767" attributes="0"/>
+                      <Component id="editUsuarioBtn" max="32767" attributes="0"/>
+                      <Component id="deleteUsuarioBtn" pref="130" max="32767" attributes="0"/>
+                      <Component id="salirBtn" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="14" pref="14" max="-2" attributes="0"/>
               </Group>
@@ -73,13 +73,13 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                          <Component id="jButton3" min="-2" pref="59" max="-2" attributes="0"/>
+                          <Component id="cargarUsuarioBtn" min="-2" pref="59" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                          <Component id="jButton5" min="-2" pref="57" max="-2" attributes="0"/>
+                          <Component id="editUsuarioBtn" min="-2" pref="57" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jButton6" min="-2" pref="52" max="-2" attributes="0"/>
+                          <Component id="deleteUsuarioBtn" min="-2" pref="52" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                          <Component id="jButton2" min="-2" pref="47" max="-2" attributes="0"/>
+                          <Component id="salirBtn" min="-2" pref="47" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -142,25 +142,28 @@
             </Container>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="salirBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Salir"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="salirBtnActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="cargarUsuarioBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cargar Usuario"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cargarUsuarioBtnActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton5">
+        <Component class="javax.swing.JButton" name="editUsuarioBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Editar Usuario"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton6">
+        <Component class="javax.swing.JButton" name="deleteUsuarioBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Eliminar Usuario"/>
           </Properties>
