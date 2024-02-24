@@ -159,29 +159,34 @@ public class Registrar extends javax.swing.JFrame {
             String username = usernameTextField.getText();
             char[] passwordChars = passwordTextField.getPassword();
             String password = new String(passwordChars);
+            
+            
+                if(username.isBlank() || password.isBlank()){
+                    mostrarMensaje("Debes completar los campos", "Errors");
+                } else {
 
-            boolean userFound = false;
+                boolean userFound = false;
 
-            for(Usuario usuario : usuarios){
+                for(Usuario usuario : usuarios){
 
-                if(usuario.getName().equals(username)){
-                    mostrarMensaje("Este nombre ya esta en uso", "Error");
-                    userFound = true;
+                    if(usuario.getName().equals(username)){
+                        mostrarMensaje("Este nombre ya esta en uso", "Error");
+                        userFound = true;
+                    }
                 }
-            }
             
-            if(!userFound){
-                controladora.crearUsuario(username, password);
-                mostrarMensaje("Usuario  creado con exito", "Creado");
+                if(!userFound){
+                    controladora.registrarUsuario(username, password);
+                    mostrarMensaje("Usuario  creado con exito", "Creado");
 
+                }
+            
             }
-            
-            
         } else {
             String username = usernameTextField.getText();
             char[] passwordChars = passwordTextField.getPassword();
             String password = new String(passwordChars);
-             controladora.crearUsuario(username, password);
+             controladora.registrarUsuario(username, password);
              mostrarMensaje("Usuario  creado con exito", "Creado");
         }
     }//GEN-LAST:event_registrarBtnActionPerformed

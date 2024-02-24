@@ -16,7 +16,9 @@ public class Controladora {
     }
     
     
-    public void crearUsuario(String name, String passwordToHash){
+    
+    
+    public void registrarUsuario(String name, String passwordToHash){
         Usuario usuario = new Usuario();
         String salt = passwordManager.getSalt();
         String password = passwordManager.generatePassword(passwordToHash, salt); 
@@ -25,6 +27,23 @@ public class Controladora {
         usuario.setPassword(password);
         usuario.setSalt(salt);
         usuario.setRole(Role.USER);
+        
+        
+        
+        controlPersist.crearUsuario(usuario);    
+    }
+    
+    
+    
+    public void crearUsuario(String name, String passwordToHash, Role rol){
+        Usuario usuario = new Usuario();
+        String salt = passwordManager.getSalt();
+        String password = passwordManager.generatePassword(passwordToHash, salt); 
+        
+        usuario.setName(name);
+        usuario.setPassword(password);
+        usuario.setSalt(salt);
+        usuario.setRole(rol);
         
         
         
