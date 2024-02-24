@@ -5,6 +5,7 @@
 package com.mycompany.sistema.roles.gui;
 
 import com.mycompany.sistema.roles.logica.Controladora;
+import com.mycompany.sistema.roles.logica.Role;
 import com.mycompany.sistema.roles.logica.Usuario;
 import java.util.List;
 
@@ -179,7 +180,17 @@ public class Login extends javax.swing.JFrame {
                 if(usuario.getName().equals(username)){
                     boolean passwordsAreEqual = controladora.comparePasswords(password, usuario.getSalt(), usuario.getPassword());
                     if(passwordsAreEqual){
-                        messageLabel.setText("Bienvenido " + usuario.getName() + ", lo estabamos esperando");
+                       
+                        if(usuario.getRole() == Role.ADMIN){
+                            PanelAdmin panelAdmin = new PanelAdmin();
+                            panelAdmin.setVisible(true);
+                            panelAdmin.setLocationRelativeTo(null);
+                            
+                            this.dispose();
+                        } else {
+                            messageLabel.setText("Bienvenido usuario" + usuario.getName() + ", lo estabamos esperando");
+                        }
+                        
                         userFound = true;
                     }
                     
