@@ -65,7 +65,11 @@ public class Controladora {
         usuario.setRole(rol);
         
         if(!password.isBlank()){
-            usuario.setPassword(password);
+            System.out.println(password);
+            String salt = passwordManager.getSalt();
+            String passwordHash = passwordManager.generatePassword(password, salt);
+            usuario.setSalt(salt);
+            usuario.setPassword(passwordHash);
         }
         
         controlPersist.editarUsuario(usuario);
