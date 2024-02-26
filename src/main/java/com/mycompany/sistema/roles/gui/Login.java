@@ -182,13 +182,13 @@ public class Login extends javax.swing.JFrame {
                     if(passwordsAreEqual){
                        
                         if(usuario.getRole() == Role.ADMIN){
-                            PanelAdmin panelAdmin = new PanelAdmin();
+                            PanelAdmin panelAdmin = new PanelAdmin(usuario.getId());
                             panelAdmin.setVisible(true);
                             panelAdmin.setLocationRelativeTo(null);
                             
                             this.dispose();
                         } else {
-                            PanelUsuario panelUsuario = new PanelUsuario();
+                            PanelUsuario panelUsuario = new PanelUsuario(usuario.getId());
                             panelUsuario.setVisible(true);
                             panelUsuario.setLocationRelativeTo(null);
                             

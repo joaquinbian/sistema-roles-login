@@ -179,7 +179,7 @@ public class EditarUsuario extends javax.swing.JFrame {
 
         }
         
-        PanelAdmin panelAdmin = new PanelAdmin();
+        PanelAdmin panelAdmin = new PanelAdmin(this.user_id);
         panelAdmin.setVisible(true);
         panelAdmin.setLocationRelativeTo(null);
 
