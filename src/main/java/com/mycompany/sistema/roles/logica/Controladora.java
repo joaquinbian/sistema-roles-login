@@ -54,4 +54,20 @@ public class Controladora {
     public boolean comparePasswords(String password, String salt, String hashedPassword){
         return passwordManager.comparePasswords(password, salt, hashedPassword);
     }
+    
+    public Usuario getUsuario(int id){
+        return controlPersist.getUsuario(id);
+    }
+   
+    public void editarUsuario(Usuario usuario, String nombre, String password, Role rol){
+       
+        usuario.setName(nombre);
+        usuario.setRole(rol);
+        
+        if(!password.isBlank()){
+            usuario.setPassword(password);
+        }
+        
+        controlPersist.editarUsuario(usuario);
+    }
 }

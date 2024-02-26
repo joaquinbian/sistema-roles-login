@@ -4,6 +4,8 @@ import com.mycompany.sistema.roles.logica.Controladora;
 import com.mycompany.sistema.roles.logica.Role;
 import com.mycompany.sistema.roles.logica.Usuario;
 import java.util.List;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -77,6 +79,11 @@ public class PanelAdmin extends javax.swing.JFrame {
         });
 
         editUsuarioBtn.setText("Editar Usuario");
+        editUsuarioBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editUsuarioBtnActionPerformed(evt);
+            }
+        });
 
         deleteUsuarioBtn.setText("Eliminar Usuario");
 
@@ -157,6 +164,40 @@ public class PanelAdmin extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_salirBtnActionPerformed
 
+    private void editUsuarioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editUsuarioBtnActionPerformed
+        // TODO add your handling code here:
+        
+        if(usersTable.getRowCount() > 0){
+            if(usersTable.getSelectedRow() != -1){
+                
+                //obtener el id del usuario seleccionado
+                //pasarlo a la pantalla de editar para que lo busque
+                
+                int user_id = Integer.parseInt(String.valueOf(usersTable.getValueAt(usersTable.getSelectedRow(), 0)));
+                
+                EditarUsuario editarUsuario = new EditarUsuario(user_id);
+                editarUsuario.setVisible(true);
+                editarUsuario.setLocationRelativeTo(null);
+                
+                this.dispose();
+                
+                
+                
+            } else {
+                mostrarMensaje("No has seleccionado ningun usuario", "Error");
+            }
+        } else {
+            mostrarMensaje("La tabla esta vacia", "Error");
+        }
+    }//GEN-LAST:event_editUsuarioBtnActionPerformed
+
+    private void mostrarMensaje(String mensaje, String titulo){
+        JOptionPane jOptionPane = new JOptionPane(mensaje);
+         jOptionPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
+         JDialog dialog = jOptionPane.createDialog(titulo);
+         dialog.setAlwaysOnTop(true);
+         dialog.setVisible(true);
+    }
 
     
     private void cargarTabla(){
