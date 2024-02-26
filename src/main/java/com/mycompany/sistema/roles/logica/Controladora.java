@@ -74,4 +74,9 @@ public class Controladora {
         
         controlPersist.editarUsuario(usuario);
     }
+    
+    
+    public void eliminarUsuario(int id){
+        controlPersist.eliminarUsuario(id);
+    }
 }

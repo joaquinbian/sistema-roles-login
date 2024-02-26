@@ -1,6 +1,7 @@
 package com.mycompany.sistema.roles.persistencia;
 
 import com.mycompany.sistema.roles.logica.Usuario;
+import com.mycompany.sistema.roles.persistencia.exceptions.NonexistentEntityException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,6 +28,14 @@ public class ControladoraPersistencia {
         try {
             controlUsuario.edit(usuario);
         } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void eliminarUsuario(int id){
+        try {
+            controlUsuario.destroy(id);
+        } catch (NonexistentEntityException ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

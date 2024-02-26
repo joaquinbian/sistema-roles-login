@@ -86,6 +86,11 @@ public class PanelAdmin extends javax.swing.JFrame {
         });
 
         deleteUsuarioBtn.setText("Eliminar Usuario");
+        deleteUsuarioBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteUsuarioBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -190,6 +195,26 @@ public class PanelAdmin extends javax.swing.JFrame {
             mostrarMensaje("La tabla esta vacia", "Error");
         }
     }//GEN-LAST:event_editUsuarioBtnActionPerformed
+
+    private void deleteUsuarioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteUsuarioBtnActionPerformed
+        // TODO add your handling code here:
+        
+        if(usersTable.getRowCount() > 0){
+            if(usersTable.getSelectedRow() != -1){
+                int user_id = Integer.parseInt(String.valueOf(usersTable.getValueAt(usersTable.getSelectedRow(), 0)));
+                
+                controladora.eliminarUsuario(user_id);
+                mostrarMensaje("Usuario eliminado con exito", "Eliminar usuario");
+                
+                cargarTabla();
+                
+            } else {
+                mostrarMensaje("No has seleccionado ningun usuario", "Error");
+            }
+        } else {
+            mostrarMensaje("La tabla esta vacia", "Error");
+        }
+    }//GEN-LAST:event_deleteUsuarioBtnActionPerformed
 
     private void mostrarMensaje(String mensaje, String titulo){
         JOptionPane jOptionPane = new JOptionPane(mensaje);
