@@ -152,7 +152,7 @@ public class PanelUsuario extends javax.swing.JFrame {
         modeloTabla.setColumnIdentifiers(titulos);
         
         //luego aca hay que llamar al controlador para obtener a los usuarios...
-        List<Usuario> usuarios = controladora.getUsuarios();
+        List<Usuario> usuarios = controladora.getOnlyUsuarios();
         
         for(Usuario usuario : usuarios){
             String userRol = usuario.getRole() == Role.ADMIN ? "Admin" : "Usuario";

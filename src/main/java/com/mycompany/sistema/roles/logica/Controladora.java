@@ -1,6 +1,7 @@
 package com.mycompany.sistema.roles.logica;
 
 import com.mycompany.sistema.roles.persistencia.ControladoraPersistencia;
+import java.util.ArrayList;
 
 import java.util.List;
 
@@ -13,6 +14,19 @@ public class Controladora {
     
     public List<Usuario> getUsuarios(){
         return controlPersist.getUsuarios();
+    }
+    
+    public List<Usuario> getOnlyUsuarios(){
+        List<Usuario> usuarios = controlPersist.getUsuarios();
+        List<Usuario> onlyUsuarios = new ArrayList();
+        
+        for(Usuario user : usuarios){
+            if(user.getRole() == Role.USER){
+                onlyUsuarios.add(user);
+            }
+        }
+        
+        return onlyUsuarios;
     }
     
     
