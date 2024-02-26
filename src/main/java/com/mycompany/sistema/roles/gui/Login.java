@@ -188,7 +188,12 @@ public class Login extends javax.swing.JFrame {
                             
                             this.dispose();
                         } else {
-                            messageLabel.setText("Bienvenido usuario" + usuario.getName() + ", lo estabamos esperando");
+                            PanelUsuario panelUsuario = new PanelUsuario();
+                            panelUsuario.setVisible(true);
+                            panelUsuario.setLocationRelativeTo(null);
+                            
+                            this.dispose();
+                            //messageLabel.setText("Bienvenido usuario" + usuario.getName() + ", lo estabamos esperando");
                         }
                         
                         userFound = true;
