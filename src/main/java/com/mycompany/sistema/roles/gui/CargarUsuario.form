@@ -79,8 +79,8 @@
                       <Component id="jLabel2" alignment="0" min="-2" pref="61" max="-2" attributes="0"/>
                       <Component id="nombreTextField" alignment="0" max="32767" attributes="0"/>
                       <Component id="jLabel3" alignment="0" min="-2" pref="61" max="-2" attributes="0"/>
-                      <Component id="rolComboBox" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
                       <Component id="jLabel4" alignment="0" min="-2" pref="61" max="-2" attributes="0"/>
+                      <Component id="rolComboBox" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
               </Group>
@@ -97,9 +97,9 @@
                   <Component id="nombreTextField" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" pref="32" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                  <Component id="passwordTextField" min="-2" pref="28" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
+                  <Component id="passwordTextField" min="-2" pref="28" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" pref="32" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="rolComboBox" min="-2" max="-2" attributes="0"/>

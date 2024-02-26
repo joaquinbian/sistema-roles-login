@@ -138,7 +138,11 @@ public class PanelAdmin extends javax.swing.JFrame {
     private void cargarUsuarioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargarUsuarioBtnActionPerformed
         // TODO add your handling code here:
         
+        CargarUsuario cargarUsuario = new CargarUsuario();
+        cargarUsuario.setVisible(true);
+        cargarUsuario.setLocationRelativeTo(null);
         
+        this.dispose();
     }//GEN-LAST:event_cargarUsuarioBtnActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
